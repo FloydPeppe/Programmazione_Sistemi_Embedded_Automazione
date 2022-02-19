@@ -1,0 +1,10 @@
+21:58:03 **** Incremental Build of configuration Debug for project Identification_and_Trajectory_Tracking ****
+make -j8 all 
+arm-none-eabi-size   Identification_and_Trajectory_Tracking.elf 
+   text	   data	    bss	    dec	    hex	filename
+  69104	    492	   3476	  73072	  11d70	Identification_and_Trajectory_Tracking.elf
+Finished building: default.size.stdout
+ 
+
+21:58:03 Build Finished. 0 errors, 0 warnings. (took 391ms)
+

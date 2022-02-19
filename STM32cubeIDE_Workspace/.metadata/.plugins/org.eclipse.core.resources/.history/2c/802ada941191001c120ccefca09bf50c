@@ -1,0 +1,46 @@
+/*
+ * identification.h
+ *
+ *  Generated from MATLAB 
+ *  17-Feb-2022 10:21:06
+ *      
+ */
+
+#ifndef INC_IDENTIFICATION_DATA_H_
+#define INC_IDENTIFICATION_DATA_H_
+
+#define N_AR_L  3
+
+
+#define N_MA_L  1
+
+
+#define TAU_L  2
+
+
+#define N_AR_R  3
+
+
+#define N_MA_R  1
+
+
+#define TAU_R  2
+
+
+#define AR_L (float[3]) {\
+	1.0000000000, -1.9619367201, 0.9619309195, \
+}\
+
+#define MA_L (float[1]) {\
+	0.0007389123, \
+}\
+
+#define AR_R (float[3]) {\
+	1.0000000000, -1.9635020925, 0.9634985543, \
+}\
+
+#define MA_R (float[1]) {\
+	0.0007144241, \
+}\
+
+#endif /* INC_IDENTIFICATION_DATA_H_ */

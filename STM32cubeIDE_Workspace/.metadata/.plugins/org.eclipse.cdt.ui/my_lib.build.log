@@ -1,0 +1,10 @@
+00:40:20 **** Incremental Build of configuration Debug for project my_lib ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/my_lib/datastream_utils.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I"/home/peppe/Desktop/Progetto_Embedded/STM32cubeIDE_Workspace/my_lib/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2" -I"/home/peppe/Desktop/Progetto_Embedded/STM32cubeIDE_Workspace/my_lib/Middlewares/Third_Party/FreeRTOS/Source/include" -I"/home/peppe/Desktop/Progetto_Embedded/STM32cubeIDE_Workspace/my_lib/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/my_lib/datastream_utils.d" -MT"Core/Src/my_lib/datastream_utils.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/my_lib/datastream_utils.o"
+arm-none-eabi-ar -r  "libmy_lib.a" @"objects.list"  
+arm-none-eabi-ar: creating libmy_lib.a
+Finished building target: libmy_lib.a
+ 
+
+00:40:21 Build Finished. 0 errors, 0 warnings. (took 796ms)
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Experiments/Drivers/CMSIS/DSP_Lib&apos; to &apos;DSP&apos;" description="Rename resource &apos;DSP_Lib&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/CMSIS/DSP_Lib" name="DSP" stamp="1644855661878" updateReferences="true"/>
+</session>

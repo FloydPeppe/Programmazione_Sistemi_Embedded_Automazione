@@ -1,0 +1,4 @@
+datastream.c:25:6:UART_TxCpltCallback	16	static
+datastream.c:31:6:DATASTREAM_Init	16	static
+datastream.c:45:6:DATASTREAM_SendValue	76	static
+datastream.c:92:6:DATASTREAM_RTOS_SendValue	52	static

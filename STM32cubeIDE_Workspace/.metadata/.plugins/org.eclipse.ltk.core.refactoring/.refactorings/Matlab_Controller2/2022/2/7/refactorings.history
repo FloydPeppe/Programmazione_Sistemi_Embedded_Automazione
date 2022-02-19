@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Matlab_Controller2/Matlab_Controller.ioc&apos; to &apos;Matlab_Controller2.ioc&apos;" description="Rename resource &apos;Matlab_Controller.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Matlab_Controller.ioc" name="Matlab_Controller2.ioc" stamp="1644495040511" updateReferences="true"/>
+</session>

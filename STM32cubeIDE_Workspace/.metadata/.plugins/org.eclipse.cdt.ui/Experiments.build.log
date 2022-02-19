@@ -1,0 +1,20 @@
+21:48:30 **** Incremental Build of configuration Debug for project Experiments ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -DDIFFDRIVE_RTOS_V_ -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/DSP/Include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Experiments.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/peppe/Desktop/Progetto_Embedded/STM32cubeIDE_Workspace/Experiments/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Experiments.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Experiments.elf
+ 
+arm-none-eabi-size   Experiments.elf 
+arm-none-eabi-objdump -h -S  Experiments.elf  > "Experiments.list"
+arm-none-eabi-objcopy  -O binary  Experiments.elf  "Experiments.bin"
+   text	   data	    bss	    dec	    hex	filename
+  59752	    132	  22620	  82504	  14248	Experiments.elf
+Finished building: default.size.stdout
+ 
+Finished building: Experiments.bin
+ 
+Finished building: Experiments.list
+ 
+
+21:48:35 Build Finished. 0 errors, 0 warnings. (took 5s.5ms)
+

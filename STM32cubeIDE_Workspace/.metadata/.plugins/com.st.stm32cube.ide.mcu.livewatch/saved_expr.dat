@@ -1,0 +1,1 @@
+osSemaphoreRelease(hdiffdrv->timing.semaphore_id)

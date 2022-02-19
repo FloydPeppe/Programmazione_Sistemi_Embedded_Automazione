@@ -1,0 +1,2 @@
+datastream.c:24:6:DATASTREAM_Init	16	static
+datastream.c:35:6:DATASTREAM_SendValue	60	static

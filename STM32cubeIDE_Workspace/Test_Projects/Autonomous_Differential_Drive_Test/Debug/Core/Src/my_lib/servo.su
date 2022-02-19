@@ -1,0 +1,4 @@
+servo.c:21:6:SERVO_Init	24	static
+servo.c:49:6:SERVO_DeInit	16	static
+servo.c:62:6:SERVO_SetDegree	24	static
+servo.c:72:6:SERVO_SetBeats	16	static

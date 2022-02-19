@@ -1,0 +1,8 @@
+AbstractTextEditor.Color.Background=43,44,45
+AbstractTextEditor.Color.Foreground=204,204,204
+AbstractTextEditor.Color.SelectionForeground=147,161,161
+eclipse.preferences.version=1
+org.eclipse.cdt.codan.ui.annotation.error.color=217,232,247
+org.eclipse.cdt.ui.occurrenceIndicationColor=94,92,100
+org.eclipse.cdt.ui.writeOccurrenceIndicationColor=61,56,70
+overviewRuler_migration=migrated_3.1

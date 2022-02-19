@@ -1,0 +1,3 @@
+datastream_utils.c:11:6:reverse	32	static
+datastream_utils.c:22:5:itostr	32	static
+datastream_utils.c:49:14:ftoa	48	static

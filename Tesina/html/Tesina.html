@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title id="tab-name">Tesina</title>
+        
+        <style>
+            div {
+                padding: 8px;
+                height: auto;
+                width: 100%;
+            }
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                height: 1500px;
+                width: auto;
+            }
+          
+        </style>        
+    </head>
+   
+    <body>
+        
+        <div>
+            
+            <h2 id="header" style="text-align:center;">Tesina</h2>
+           
+            <br> <br>
+           
+            <center>
+                <button style="text-align:center;" type="button" onclick="loadImage_prev()"> Previous page</button>
+                <button style="text-align:center;" type="button" onclick="loadImage_next()"> Next page</button>
+            </center>
+           
+            <a id="doc-page"></a>  
+           
+           
+            <center>
+                <button style="text-align:center;" type="button" onclick="loadImage_prev()"> Previous page</button>
+                <button style="text-align:center;" type="button" onclick="loadImage_next()"> Next page</button>
+            </center>
+            
+            <br><br>
+            
+            <script>
+                
+                var idx= 1;
+                var filename= "./img/-";
+                var ext= ".jpg"; 
+                var idx_str="";
+
+                var idx_start= 1;
+                var idx_end= 0;
+                
+                img = new Image();
+                
+                function conta() {
+	                
+	                idx_end++;
+	                
+	                if( idx_end<10 )
+	                    img.src = filename + "0" + idx_end + ext;
+	                else
+	                    img.src = filename + idx_end + ext;
+                }
+
+                function stop() {
+                    idx_end--;
+	                //alert("La pagina contiene " + idx_end + " immagini!");
+	                console.log("La pagina contiene " + idx_end + " immagini!");
+                }
+   
+                img.onload = conta;
+                img.onerror = stop;
+                conta();
+ 
+ 
+ 
+                var xhttp = new XMLHttpRequest();
+                var txt= "";
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        txt= this.responseXML.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                        document.getElementById("tab-name").innerHTML = txt
+                        document.getElementById("header").innerHTML =   txt
+                    }
+                };
+                xhttp.onerror= function(){ 
+                    txt= "Tesina"
+                    document.getElementById("tab-name").innerHTML = txt
+                    document.getElementById("header").innerHTML =   txt
+                }
+                
+                xhttp.open("GET", "./Tesina_info.xml", true);
+                xhttp.send();                  
+
+ 
+                idx_str= idx.toString();
+                if( idx < 10 )    
+                    idx_str= "0" + idx_str;
+                document.getElementById("doc-page").innerHTML= "<img src=" + filename + idx_str + ext + ">";
+                
+                function loadImage_prev(){
+                    if( idx > idx_start )
+                        idx--;
+                    
+                    idx_str= idx.toString();
+                    if( idx < 10 )    
+                        idx_str= "0" + idx_str;
+                            
+                    document.getElementById("doc-page").innerHTML= "<img src=" + filename + idx_str + ext + ">";
+                }
+                
+                function loadImage_next(){
+                    if( idx < idx_end )
+                        idx++;
+                        
+                    idx_str= idx.toString();
+                    if( idx < 10 )    
+                        idx_str= "0" + idx_str;
+                                
+                    document.getElementById("doc-page").innerHTML= "<img src=" + filename + idx_str + ext + ">";
+                }
+                
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="delta_a"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="true"/>
+		<item key="wholeword" value="true"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="delta_a_loc"/>
+			<item value="delta_th_loc"/>
+			<item value="delta_th_tmp"/>
+			<item value="delta_a_tmp"/>
+			<item value="hmaf_gen_th"/>
+			<item value="hmaf_gen_a"/>
+			<item value="hfilter_a_2"/>
+			<item value="hfilter_th_2"/>
+			<item value="hfilter_th"/>
+			<item value="hfilter_a"/>
+			<item value="htim12"/>
+			<item value="htim3"/>
+			<item value="idx_2"/>
+			<item value="idx_1"/>
+			<item value="idx"/>
+		</list>
+		<list key="replacehistory">
+			<item value="delta_a"/>
+			<item value="delta_th"/>
+			<item value="hmaf_trajGen_th"/>
+			<item value="hmaf_trajGen_a"/>
+			<item value="hmaf_diffDrive_a"/>
+			<item value="hmaf_diffDrive_th"/>
+			<item value="hmaf_gen_th"/>
+			<item value="hmaf_gen_a"/>
+			<item value="cnt_2"/>
+			<item value="cnt_1"/>
+			<item value="idx_2"/>
+			<item value="idx_1"/>
+			<item value="deg_idx"/>
+			<item value="N_deg"/>
+			<item value="first_exception"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1276"/>
+		<item key="DIALOG_Y_ORIGIN" value="419"/>
+		<item key="DIALOG_WIDTH" value="340"/>
+		<item key="DIALOG_HEIGHT" value="422"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+</section>

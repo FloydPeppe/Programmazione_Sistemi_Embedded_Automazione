@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Autonomous/Differential_Drive_Thread_New Debug.cfg&apos; to &apos;Autonomous.cfg&apos;" description="Rename resource &apos;Differential_Drive_Thread_New Debug.cfg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Differential_Drive_Thread_New Debug.cfg" name="Autonomous.cfg" stamp="1642278606932" updateReferences="true"/>
+</session>

@@ -1,0 +1,10 @@
+21:48:27 **** Incremental Build of configuration Debug for project Autonomous ****
+make -j8 all 
+arm-none-eabi-size   Autonomous.elf 
+   text	   data	    bss	    dec	    hex	filename
+  81808	    500	  23228	 105536	  19c40	Autonomous.elf
+Finished building: default.size.stdout
+ 
+
+21:48:27 Build Finished. 0 errors, 0 warnings. (took 674ms)
+

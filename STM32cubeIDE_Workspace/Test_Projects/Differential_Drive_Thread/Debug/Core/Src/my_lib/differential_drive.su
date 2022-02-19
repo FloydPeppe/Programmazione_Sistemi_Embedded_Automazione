@@ -1,0 +1,16 @@
+differential_drive.c:24:6:DIFFDRIVE_Init	32	static
+differential_drive.c:95:6:DIFFDRIVE_DeInit	24	static
+differential_drive.c:118:6:DIFFDRIVE_MOTOR_Stop	16	static
+differential_drive.c:125:6:DIFFDRIVE_MOTOR_Set_PWMs	24	static
+differential_drive.c:173:6:DIFFDRIVE_SENSOR_Get_Measure	16	static
+differential_drive.c:184:6:DIFFDRIVE_SENSOR_Reset	16	static
+differential_drive.c:192:6:DIFFDRIVE_HISTORY_Start	16	static
+differential_drive.c:204:6:DIFFDRIVE_HISTORY_Update	32	static
+differential_drive.c:235:6:DIFFDRIVE_Wheel_Motion_Control	56	static
+differential_drive.c:274:6:DIFFDRIVE_Compute_Wheel_Target	40	static
+differential_drive.c:286:6:DIFFDRIVE_TIMING_Start	8	static
+differential_drive.c:294:6:DIFFDRIVE_TIMING_Stop	8	static
+differential_drive.c:301:6:DIFFDRIVE_TIMING_Wait	4	static
+differential_drive.c:313:25:DIFFDRIVE_Trajectory_Follower	40	static
+differential_drive.c:362:6:DIFFDRIVE_Input_Array	40	static
+differential_drive.c:395:6:DIFFDRIVE_TIMING_Callback	16	static
