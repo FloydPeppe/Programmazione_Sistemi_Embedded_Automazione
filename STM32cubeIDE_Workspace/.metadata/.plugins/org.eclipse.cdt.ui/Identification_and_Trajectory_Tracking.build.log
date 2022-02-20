@@ -1,14 +1,16 @@
-18:46:27 **** Build of configuration Debug for project Identification_and_Trajectory_Tracking ****
+19:13:25 **** Incremental Build of configuration Debug for project Identification_and_Trajectory_Tracking ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
 arm-none-eabi-gcc -o "Identification_and_Trajectory_Tracking.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/peppe/Desktop/Progetto_Programmazione_Sistemi_Embedded_Automazione/STM32cubeIDE_Workspace/Identification_and_Trajectory_Tracking/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Identification_and_Trajectory_Tracking.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Identification_and_Trajectory_Tracking.elf
  
 arm-none-eabi-size   Identification_and_Trajectory_Tracking.elf 
 arm-none-eabi-objdump -h -S  Identification_and_Trajectory_Tracking.elf  > "Identification_and_Trajectory_Tracking.list"
-arm-none-eabi-objcopy  -O binary  Identification_and_Trajectory_Tracking.elf  "Identification_and_Trajectory_Tracking.bin"
    text	   data	    bss	    dec	    hex	filename
   69104	    492	   3476	  73072	  11d70	Identification_and_Trajectory_Tracking.elf
+arm-none-eabi-objcopy  -O binary  Identification_and_Trajectory_Tracking.elf  "Identification_and_Trajectory_Tracking.bin"
 Finished building: default.size.stdout
  
 Finished building: Identification_and_Trajectory_Tracking.bin
@@ -16,5 +18,5 @@ Finished building: Identification_and_Trajectory_Tracking.bin
 Finished building: Identification_and_Trajectory_Tracking.list
  
 
-18:46:30 Build Finished. 0 errors, 0 warnings. (took 2s.281ms)
+19:13:30 Build Finished. 0 errors, 0 warnings. (took 5s.458ms)
 

@@ -2915,7 +2915,7 @@ void MoveDifferentialDrive(void *argument)
 			// have just to find the max or min v value (min is -max) with the constraints of omega fixed and
 			// wheel_speed between the fixed range:
 			//
-			// https://github.com/FloydPeppe/Progetto_Sistemi_Embedded/blob/main/Tesina/Tesina_Progetto_Embedded.pdf
+			// https://github.com/FloydPeppe/Programmazione_Sistemi_Embedded_Automazione/blob/master/Relazione/Relazione_Progetto.pdf
 			//
 			float l = hdiffdrive.mech_prmtr.l;
  800195c:	4b42      	ldr	r3, [pc, #264]	; (8001a68 <MoveDifferentialDrive+0x1b8>)

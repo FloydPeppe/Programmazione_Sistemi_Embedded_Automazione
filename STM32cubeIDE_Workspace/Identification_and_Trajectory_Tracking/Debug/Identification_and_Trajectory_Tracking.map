@@ -5339,11 +5339,11 @@ LOAD /opt/st/stm32cubeide_1.6.0/plugins/com.st.stm32cube.ide.mcu.externaltools.g
 .debug_str      0x0000000000000000    0xdaf4b
  .debug_str     0x0000000000000000    0xd4cec ./Core/Src/main.o
                                       0xd55b7 (size before relaxing)
- .debug_str     0x00000000000d4cec      0x678 ./Core/Src/stm32f4xx_hal_msp.o
-                                      0xd0900 (size before relaxing)
- .debug_str     0x00000000000d5364       0xcd ./Core/Src/stm32f4xx_it.o
-                                      0xcff4a (size before relaxing)
- .debug_str     0x00000000000d5431     0x167e ./Core/Src/syscalls.o
+ .debug_str     0x00000000000d4cec      0x60e ./Core/Src/stm32f4xx_hal_msp.o
+                                      0xd0923 (size before relaxing)
+ .debug_str     0x00000000000d52fa       0xcd ./Core/Src/stm32f4xx_it.o
+                                      0xcff6d (size before relaxing)
+ .debug_str     0x00000000000d53c7     0x16e8 ./Core/Src/syscalls.o
                                        0x8efc (size before relaxing)
  .debug_str     0x00000000000d6aaf       0x6b ./Core/Src/sysmem.o
                                        0x62cf (size before relaxing)

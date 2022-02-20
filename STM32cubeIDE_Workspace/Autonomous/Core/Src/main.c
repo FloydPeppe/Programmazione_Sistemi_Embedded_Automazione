@@ -1123,11 +1123,11 @@ void TrajectoryGenerator(void *argument)
 			//
 			// Compute v_max, to find a feasible trajectory, i.e. that respect wheel max speed rate.
 			// Here I fix omega (angular speed), computed above, and I find the current max (feasible) linear value
-			// Look at chapter 2, expression 2.12, on the links below (on STM32CubeIDE press CTRL and then click). You
+			// Look at chapter 2, expression 1.11, on the links below (on STM32CubeIDE press CTRL and then click). You
 			// have just to find the max or min v value (min is -max) with the constraints of omega fixed and
 			// wheel_speed between the fixed range:
 			//
-			// https://github.com/FloydPeppe/Progetto_Sistemi_Embedded/blob/main/Tesina/Tesina_Progetto_Embedded.pdf
+			// https://github.com/FloydPeppe/Programmazione_Sistemi_Embedded_Automazione/blob/master/Relazione/Relazione_Progetto.pdf
 			//
 			float l= hdiffdrive.mech_prmtr.l;
 			float r= hdiffdrive.mech_prmtr.r;
