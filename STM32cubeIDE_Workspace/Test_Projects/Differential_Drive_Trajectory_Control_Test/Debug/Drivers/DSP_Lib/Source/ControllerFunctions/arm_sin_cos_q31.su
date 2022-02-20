@@ -1,2 +1,0 @@
-arm_math.h:490:25:clip_q63_to_q31	16	static
-arm_sin_cos_q31.c:64:6:arm_sin_cos_q31	240	static

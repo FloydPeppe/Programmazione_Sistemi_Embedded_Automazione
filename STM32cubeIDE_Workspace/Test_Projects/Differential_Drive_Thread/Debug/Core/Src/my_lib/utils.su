@@ -1,3 +1,0 @@
-utils.c:11:6:reverse	32	static
-utils.c:22:5:itostr	32	static
-utils.c:49:6:ftoa	48	static

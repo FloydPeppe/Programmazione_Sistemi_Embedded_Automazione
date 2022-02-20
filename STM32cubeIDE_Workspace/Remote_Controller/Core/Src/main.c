@@ -734,8 +734,8 @@ static void MAIN_MAF_Init(void){
 	int filtr_om_size= 10;
 #else
 #ifdef JOYSTICK_CONTROLLER
-	int filtr_a_size=  30;
-	int filtr_th_size= 50;
+	int filtr_v_size=  30;
+	int filtr_om_size= 50;
 #endif
 #endif
 
@@ -891,16 +891,18 @@ void MoveDifferentialDrive(void *argument)
 void InfraredSensor(void *argument)
 {
   /* USER CODE BEGIN InfraredSensor */
+	/* Infinite loop */
 
 	// Infrared variable
 	float sens = 0;
 
 	for (;;) {
 
-		// Read current value on IR pin
+		// Read current value on IR pin (0 is obstacle detected, 1 is free space)
 		sens = HAL_GPIO_ReadPin(INFRARED_SENSOR_GPIO_Port, INFRARED_SENSOR_Pin);
 
 		// Use MAF filter to transform only 0 or 1 state in values that span from 0 to 1
+		// (like a normalized distance measure)
 		MAF_Update(&hfilter_infrared, sens);
 
 		osDelay(1);

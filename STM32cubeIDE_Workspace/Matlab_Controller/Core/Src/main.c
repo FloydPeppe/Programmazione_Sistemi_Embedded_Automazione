@@ -95,6 +95,9 @@ const osThreadAttr_t InfraredTask_attributes = {
   .priority = (osPriority_t) osPriorityRealtime,
 };
 
+// Entry function prototype
+void InfraredSensor(void *argument);
+
 #endif
 
 // Handles of my libraries
@@ -767,15 +770,18 @@ void InfraredSensor(void *argument)
 {
   /* USER CODE BEGIN InfraredSensor */
 
+	/* Infinite loop */
+
 	// Infrared variable
 	float sens = 0;
 
 	for (;;) {
 
-		// Read current value on IR pin
+		// Read current value on IR pin (0 is obstacle detected, 1 is free space)
 		sens = HAL_GPIO_ReadPin(INFRARED_SENSOR_GPIO_Port, INFRARED_SENSOR_Pin);
 
 		// Use MAF filter to transform only 0 or 1 state in values that span from 0 to 1
+		// (like a normalized distance measure)
 		MAF_Update(&hfilter_infrared, sens);
 
 		osDelay(1);
@@ -1095,7 +1101,7 @@ void RxStream(void *argument)
 	int k_= 0;
 
 	// Communication timeout of milliseconds (set osWaitForever for no timeout)
-	uint32_t timeout_time= osWaitForever;//2000;
+	uint32_t timeout_time= 2000; //osWaitForever;
 
 #ifdef CSV_PACKET
 

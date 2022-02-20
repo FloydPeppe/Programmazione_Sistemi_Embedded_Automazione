@@ -1,6 +1,0 @@
-ultrasonic_sensor.c:20:26:ULTRASONIC_Init	24	static
-ultrasonic_sensor.c:61:7:ULTRASONIC_DeInit	16	static
-ultrasonic_sensor.c:68:26:ULTRASONIC_CaptureMeasure	64	static,ignoring_inline_asm
-ultrasonic_sensor.c:152:6:ULTRASONIC_Delay_us	24	static
-ultrasonic_sensor.c:166:6:ULTRASONIC_IC_Callback	24	static
-ultrasonic_sensor.c:175:6:ULTRASONIC_Timeout_Callback	24	static

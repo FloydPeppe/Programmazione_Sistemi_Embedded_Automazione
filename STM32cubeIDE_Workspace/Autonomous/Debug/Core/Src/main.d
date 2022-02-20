@@ -43,8 +43,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/my_lib/pid_controller.h ../Core/Inc/my_lib/datastream.h \
  ../Core/Inc/my_lib/digital_filters.h \
  ../Core/Inc/my_lib/ultrasonic_sensor.h ../Core/Inc/my_lib/servo.h \
- ../Core/Inc/my_data/control_parameters.h ../Core/Inc/my_data/idinput.h \
- ../Core/Inc/my_data/reference.h \
+ ../Core/Inc/my_data/control_parameters.h \
  ../Core/Inc/my_data/diffdrive_parameters.h
 
 ../Core/Inc/main.h:
@@ -142,9 +141,5 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/my_lib/servo.h:
 
 ../Core/Inc/my_data/control_parameters.h:
-
-../Core/Inc/my_data/idinput.h:
-
-../Core/Inc/my_data/reference.h:
 
 ../Core/Inc/my_data/diffdrive_parameters.h:

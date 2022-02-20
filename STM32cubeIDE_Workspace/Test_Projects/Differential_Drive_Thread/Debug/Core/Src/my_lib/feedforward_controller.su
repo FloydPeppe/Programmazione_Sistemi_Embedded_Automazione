@@ -1,5 +1,0 @@
-feedforward_controller.c:12:6:FEEDFORWARD_Init	24	static
-feedforward_controller.c:34:6:FEEDFORWARD_DeInit	16	static
-feedforward_controller.c:45:6:FEEDFORWARD_Buffer_Init	48	static
-feedforward_controller.c:67:7:FEEDFORWARD_Inversion_Control	72	static
-feedforward_controller.c:100:6:FEEDFORWARD_Buffer_Update	40	static

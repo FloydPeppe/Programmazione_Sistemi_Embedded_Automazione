@@ -3085,8 +3085,8 @@ static void MAIN_DIFFDRIVE_Init(void){
  8001bfc:	40f00000 	.word	0x40f00000
  8001c00:	080106f8 	.word	0x080106f8
  8001c04:	08010704 	.word	0x08010704
- 8001c08:	39c3ec0a 	.word	0x39c3ec0a
- 8001c0c:	39eb3e05 	.word	0x39eb3e05
+ 8001c08:	3a33ef47 	.word	0x3a33ef47
+ 8001c0c:	3a44cbb3 	.word	0x3a44cbb3
  8001c10:	41c80000 	.word	0x41c80000
  8001c14:	3d9eb852 	.word	0x3d9eb852
  8001c18:	3d0d4fdf 	.word	0x3d0d4fdf

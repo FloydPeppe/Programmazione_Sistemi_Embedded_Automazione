@@ -35,15 +35,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_ranges 000016c0  00000000  00000000  0005e5d0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00006200  00000000  00000000  0005fc90  2**0
+ 16 .debug_macro  0000618a  00000000  00000000  0005fc90  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001d092  00000000  00000000  00065e90  2**0
+ 17 .debug_line   0001d078  00000000  00000000  00065e1a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0010bbc7  00000000  00000000  00082f22  2**0
+ 18 .debug_str    000dfce1  00000000  00000000  00082e92  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  0018eae9  2**0
+ 19 .comment      00000053  00000000  00000000  00162b73  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00007eac  00000000  00000000  0018eb3c  2**2
+ 20 .debug_frame  00007eac  00000000  00000000  00162bc8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -3081,8 +3081,8 @@ static void MAIN_DIFFDRIVE_Init(void){
  8001aa4:	40f00000 	.word	0x40f00000
  8001aa8:	080137cc 	.word	0x080137cc
  8001aac:	080137d8 	.word	0x080137d8
- 8001ab0:	3a41b391 	.word	0x3a41b391
- 8001ab4:	3a3b4831 	.word	0x3a3b4831
+ 8001ab0:	3a33ef47 	.word	0x3a33ef47
+ 8001ab4:	3a44cbb3 	.word	0x3a44cbb3
  8001ab8:	41c80000 	.word	0x41c80000
  8001abc:	3d9eb852 	.word	0x3d9eb852
  8001ac0:	3d0d4fdf 	.word	0x3d0d4fdf
@@ -3794,7 +3794,7 @@ void TrajectoryGenerator(void *argument)
 
 			/* Using measured distance and servo angular position to generate a trajectory */
 
-			// Robot linear position variation (direct proportional to distance) and negative below a distance threshold
+			// Robot linear speed (direct proportional to distance) and negative below a distance threshold
 			v = (distance - distance_threshold) * 4e-3;
  8001fac:	ed97 7a30 	vldr	s14, [r7, #192]	; 0xc0
  8001fb0:	edd7 7a29 	vldr	s15, [r7, #164]	; 0xa4
@@ -3823,8 +3823,8 @@ void TrajectoryGenerator(void *argument)
  8001ff6:	ee67 7a87 	vmul.f32	s15, s15, s14
  8001ffa:	edc7 7a2f 	vstr	s15, [r7, #188]	; 0xbc
 
-			// Robot angular position (theta) variation (inversely proportional to distance with sign that
-			// depends on servo degree position)
+			// Robot angular speed (inversely proportional to distance) with sign that
+			// depends on servo current position
 			if (deg_array[deg_idx] > deg_eq)
  8001ffe:	f8d7 30b4 	ldr.w	r3, [r7, #180]	; 0xb4
  8002002:	009b      	lsls	r3, r3, #2
@@ -4175,7 +4175,7 @@ void InfraredSensor(void *argument)
 
 	for (;;) {
 
-		// Read current value on IR pin
+		// Read current value on IR pin (0 is obstacle detected, 1 is free space)
 		sens = HAL_GPIO_ReadPin(INFRARED_SENSOR_GPIO_Port, INFRARED_SENSOR_Pin);
  8002322:	2180      	movs	r1, #128	; 0x80
  8002324:	4809      	ldr	r0, [pc, #36]	; (800234c <InfraredSensor+0x38>)
@@ -4186,6 +4186,7 @@ void InfraredSensor(void *argument)
  8002334:	edc7 7a03 	vstr	s15, [r7, #12]
 
 		// Use MAF filter to transform only 0 or 1 state in values that span from 0 to 1
+		// (like a normalized distance measure)
 		MAF_Update(&hfilter_infrared, sens);
  8002338:	ed97 0a03 	vldr	s0, [r7, #12]
  800233c:	4804      	ldr	r0, [pc, #16]	; (8002350 <InfraredSensor+0x3c>)

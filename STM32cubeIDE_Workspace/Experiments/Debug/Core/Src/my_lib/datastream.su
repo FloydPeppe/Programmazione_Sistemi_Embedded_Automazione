@@ -1,7 +1,0 @@
-datastream.c:26:26:DATASTREAM_Init	16	static
-datastream.c:68:6:DATASTREAM_DeInit	8	static
-datastream.c:75:26:DATASTREAM_ReceiveDMA	24	static
-datastream.c:95:26:DATASTREAM_ReceiveDMA_Reset	16	static
-datastream.c:117:6:DATASTREAM_Print	88	static
-datastream.c:198:6:DATASTREAM_RxCpltCallback	24	static
-datastream.c:212:6:DATASTREAM_ErrorCallback	16	static,ignoring_inline_asm

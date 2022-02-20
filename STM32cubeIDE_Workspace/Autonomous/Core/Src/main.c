@@ -32,8 +32,6 @@
 #include "my_lib/servo.h"
 
 #include <my_data/control_parameters.h>
-#include <my_data/idinput.h>
-#include <my_data/reference.h>
 #include "my_data/diffdrive_parameters.h"
 
 #include "stdbool.h"
@@ -1102,13 +1100,13 @@ void TrajectoryGenerator(void *argument)
 
 			/* Using measured distance and servo angular position to generate a trajectory */
 
-			// Robot linear position variation (direct proportional to distance) and negative below a distance threshold
+			// Robot linear speed (direct proportional to distance) and negative below a distance threshold
 			v = (distance - distance_threshold) * 4e-3;
 			if (distance < distance_threshold)
 				v *= 1.5;
 
-			// Robot angular position (theta) variation (inversely proportional to distance with sign that
-			// depends on servo degree position)
+			// Robot angular speed (inversely proportional to distance) with sign that
+			// depends on servo current position
 			if (deg_array[deg_idx] > deg_eq)
 				om = -43.2/distance;
 			else
@@ -1237,10 +1235,11 @@ void InfraredSensor(void *argument)
 
 	for (;;) {
 
-		// Read current value on IR pin
+		// Read current value on IR pin (0 is obstacle detected, 1 is free space)
 		sens = HAL_GPIO_ReadPin(INFRARED_SENSOR_GPIO_Port, INFRARED_SENSOR_Pin);
 
 		// Use MAF filter to transform only 0 or 1 state in values that span from 0 to 1
+		// (like a normalized distance measure)
 		MAF_Update(&hfilter_infrared, sens);
 
 		osDelay(1);
@@ -1260,7 +1259,7 @@ void TxStream(void *argument)
   /* USER CODE BEGIN TxStream */
 
 	// Variables I need later
-	DIFFDRIVE_STATE_TypeDef state_measure, state_target;;
+	DIFFDRIVE_STATE_TypeDef state_measure, state_target;
 
 	/* Infinite loop */
 	for(;;){

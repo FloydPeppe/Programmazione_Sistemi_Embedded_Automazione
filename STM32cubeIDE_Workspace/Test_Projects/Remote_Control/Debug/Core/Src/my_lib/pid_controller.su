@@ -1,3 +1,0 @@
-pid_controller.c:11:6:PID_Init	16	static
-pid_controller.c:32:6:PID_Reset	16	static
-pid_controller.c:45:7:PID_Control	40	static

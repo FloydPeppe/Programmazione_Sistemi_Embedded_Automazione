@@ -2720,8 +2720,8 @@ static void MAIN_DIFFDRIVE_Init(void){
  8001808:	40f00000 	.word	0x40f00000
  800180c:	0800e780 	.word	0x0800e780
  8001810:	0800e78c 	.word	0x0800e78c
- 8001814:	3a41b391 	.word	0x3a41b391
- 8001818:	3a3b4831 	.word	0x3a3b4831
+ 8001814:	3a33ef47 	.word	0x3a33ef47
+ 8001818:	3a44cbb3 	.word	0x3a44cbb3
  800181c:	41c80000 	.word	0x41c80000
  8001820:	3d9eb852 	.word	0x3d9eb852
  8001824:	3d0d4fdf 	.word	0x3d0d4fdf
@@ -3575,8 +3575,8 @@ void RxStream(void *argument)
  8001e66:	f8c7 31b8 	str.w	r3, [r7, #440]	; 0x1b8
 
 	// Communication timeout of milliseconds (set osWaitForever for no timeout)
-	uint32_t timeout_time= osWaitForever;//2000;
- 8001e6a:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+	uint32_t timeout_time= 2000; //osWaitForever;
+ 8001e6a:	f44f 63fa 	mov.w	r3, #2000	; 0x7d0
  8001e6e:	f8c7 31b4 	str.w	r3, [r7, #436]	; 0x1b4
 	char curr_str[]=   "value"; //"gravity";
 #else

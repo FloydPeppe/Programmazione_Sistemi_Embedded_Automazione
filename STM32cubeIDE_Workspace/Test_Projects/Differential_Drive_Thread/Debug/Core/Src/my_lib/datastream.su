@@ -1,3 +1,0 @@
-datastream.c:22:6:DATASTREAM_Init	16	static
-datastream.c:33:6:DATASTREAM_Send_Value	76	static
-datastream.c:80:6:DATASTREAM_RTOS_Send_Value	60	static

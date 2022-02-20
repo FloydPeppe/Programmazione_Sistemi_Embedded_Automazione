@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00005e5f  00000000  00000000  0005ded0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001cade  00000000  00000000  00063d2f  2**0
+ 17 .debug_line   0001cae0  00000000  00000000  00063d2f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000dfb57  00000000  00000000  0008080d  2**0
+ 18 .debug_str    000dfb57  00000000  00000000  0008080f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  00160364  2**0
+ 19 .comment      00000053  00000000  00000000  00160366  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00007c30  00000000  00000000  001603b8  2**2
+ 20 .debug_frame  00007c30  00000000  00000000  001603bc  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2845,8 +2845,8 @@ static void MAIN_DIFFDRIVE_Init(void){
  8001940:	40f00000 	.word	0x40f00000
  8001944:	080115a8 	.word	0x080115a8
  8001948:	080115b4 	.word	0x080115b4
- 800194c:	3a41b391 	.word	0x3a41b391
- 8001950:	3a3b4831 	.word	0x3a3b4831
+ 800194c:	3a33ef47 	.word	0x3a33ef47
+ 8001950:	3a44cbb3 	.word	0x3a44cbb3
  8001954:	41c80000 	.word	0x41c80000
  8001958:	3d9eb852 	.word	0x3d9eb852
  800195c:	3d0d4fdf 	.word	0x3d0d4fdf
@@ -2866,8 +2866,8 @@ static void MAIN_MAF_Init(void){
 	int filtr_om_size= 10;
  800196e:	230a      	movs	r3, #10
  8001970:	623b      	str	r3, [r7, #32]
-	int filtr_a_size=  30;
-	int filtr_th_size= 50;
+	int filtr_v_size=  30;
+	int filtr_om_size= 50;
 #endif
 #endif
 
@@ -3200,6 +3200,7 @@ void InfraredSensor(void *argument)
  8001bbc:	af00      	add	r7, sp, #0
  8001bbe:	6078      	str	r0, [r7, #4]
   /* USER CODE BEGIN InfraredSensor */
+	/* Infinite loop */
 
 	// Infrared variable
 	float sens = 0;
@@ -3208,7 +3209,7 @@ void InfraredSensor(void *argument)
 
 	for (;;) {
 
-		// Read current value on IR pin
+		// Read current value on IR pin (0 is obstacle detected, 1 is free space)
 		sens = HAL_GPIO_ReadPin(INFRARED_SENSOR_GPIO_Port, INFRARED_SENSOR_Pin);
  8001bc6:	2180      	movs	r1, #128	; 0x80
  8001bc8:	4809      	ldr	r0, [pc, #36]	; (8001bf0 <InfraredSensor+0x38>)
@@ -3219,6 +3220,7 @@ void InfraredSensor(void *argument)
  8001bd8:	edc7 7a03 	vstr	s15, [r7, #12]
 
 		// Use MAF filter to transform only 0 or 1 state in values that span from 0 to 1
+		// (like a normalized distance measure)
 		MAF_Update(&hfilter_infrared, sens);
  8001bdc:	ed97 0a03 	vldr	s0, [r7, #12]
  8001be0:	4804      	ldr	r0, [pc, #16]	; (8001bf4 <InfraredSensor+0x3c>)
