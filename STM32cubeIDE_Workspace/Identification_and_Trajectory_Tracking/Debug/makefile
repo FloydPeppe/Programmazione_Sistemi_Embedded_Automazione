@@ -61,8 +61,8 @@ all: main-build
 main-build: Identification_and_Trajectory_Tracking.elf secondary-outputs
 
 # Tool invocations
-Identification_and_Trajectory_Tracking.elf: $(OBJS) $(USER_OBJS) /home/peppe/Desktop/Progetto_Embedded/STM32cubeIDE_Workspace/Identification_and_Trajectory_Tracking/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Identification_and_Trajectory_Tracking.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/peppe/Desktop/Progetto_Embedded/STM32cubeIDE_Workspace/Identification_and_Trajectory_Tracking/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Identification_and_Trajectory_Tracking.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Identification_and_Trajectory_Tracking.elf: $(OBJS) $(USER_OBJS) /home/peppe/Desktop/Progetto_Programmazione_Sistemi_Embedded_Automazione/STM32cubeIDE_Workspace/Identification_and_Trajectory_Tracking/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Identification_and_Trajectory_Tracking.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/peppe/Desktop/Progetto_Programmazione_Sistemi_Embedded_Automazione/STM32cubeIDE_Workspace/Identification_and_Trajectory_Tracking/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Identification_and_Trajectory_Tracking.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

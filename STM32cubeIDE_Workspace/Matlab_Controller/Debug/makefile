@@ -65,8 +65,8 @@ all: main-build
 main-build: Matlab_Controller.elf secondary-outputs
 
 # Tool invocations
-Matlab_Controller.elf: $(OBJS) $(USER_OBJS) /home/peppe/Desktop/Progetto_Embedded/STM32cubeIDE_Workspace/Matlab_Controller/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Matlab_Controller.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/peppe/Desktop/Progetto_Embedded/STM32cubeIDE_Workspace/Matlab_Controller/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Matlab_Controller.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Matlab_Controller.elf: $(OBJS) $(USER_OBJS) /home/peppe/Desktop/Progetto_Programmazione_Sistemi_Embedded_Automazione/STM32cubeIDE_Workspace/Matlab_Controller/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Matlab_Controller.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/peppe/Desktop/Progetto_Programmazione_Sistemi_Embedded_Automazione/STM32cubeIDE_Workspace/Matlab_Controller/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Matlab_Controller.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

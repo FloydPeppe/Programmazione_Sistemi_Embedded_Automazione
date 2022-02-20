@@ -1,10 +1,20 @@
-21:48:27 **** Incremental Build of configuration Debug for project Autonomous ****
+18:46:23 **** Build of configuration Debug for project Autonomous ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DDIFFDRIVE_RTOS_V_ -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Autonomous.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/peppe/Desktop/STM32/STM32CubeIDE/Progetto_Differential_Drive/Differential_Drive_Thread_New/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Autonomous.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Autonomous.elf
+ 
 arm-none-eabi-size   Autonomous.elf 
+arm-none-eabi-objdump -h -S  Autonomous.elf  > "Autonomous.list"
+arm-none-eabi-objcopy  -O binary  Autonomous.elf  "Autonomous.bin"
    text	   data	    bss	    dec	    hex	filename
   81808	    500	  23228	 105536	  19c40	Autonomous.elf
 Finished building: default.size.stdout
  
+Finished building: Autonomous.bin
+ 
+Finished building: Autonomous.list
+ 
 
-21:48:27 Build Finished. 0 errors, 0 warnings. (took 674ms)
+18:46:27 Build Finished. 0 errors, 0 warnings. (took 3s.983ms)
 
