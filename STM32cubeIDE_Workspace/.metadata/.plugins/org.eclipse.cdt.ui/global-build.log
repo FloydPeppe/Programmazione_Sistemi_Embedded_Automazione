@@ -14,3 +14,20 @@ Finished building: Autonomous.bin
  
 Finished building: Autonomous.list
  
+19:55:28 **** Incremental Build of configuration Debug for project Matlab_Controller ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -DDIFFDRIVE_RTOS_V_ -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Matlab_Controller.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/peppe/Desktop/Progetto_Programmazione_Sistemi_Embedded_Automazione/STM32cubeIDE_Workspace/Matlab_Controller/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Matlab_Controller.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Matlab_Controller.elf
+ 
+arm-none-eabi-size   Matlab_Controller.elf 
+arm-none-eabi-objdump -h -S  Matlab_Controller.elf  > "Matlab_Controller.list"
+arm-none-eabi-objcopy  -O binary  Matlab_Controller.elf  "Matlab_Controller.bin"
+   text	   data	    bss	    dec	    hex	filename
+  60024	    132	  22620	  82776	  14358	Matlab_Controller.elf
+Finished building: default.size.stdout
+ 
+Finished building: Matlab_Controller.bin
+ 
+Finished building: Matlab_Controller.list
+ 
