@@ -28,6 +28,8 @@
 
 #include "my_data/control_parameters.h"
 #include "my_data/diffdrive_parameters.h"
+#include "my_data/idinput.h"
+#include "my_data/reference.h"
 
 #include <stdio.h>
 #include <stdlib.h>
